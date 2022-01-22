@@ -37,6 +37,16 @@ public class AdminController {
        return "adminPage";
     }
 
+     @GetMapping("/adminPage/OrderDontDonePage")
+    @PreAuthorize("hasAuthority('ADMIN')or hasAuthority('MANAGER')")
+    public String orderDontDonePage(Model model) {
+
+
+
+        Iterable<Order> orders = orderService.getAllOrdersOnProgresNotDone();
+        model.addAttribute("orders",orders);
+        return "Orders";
+    }
 
     @GetMapping("/adminPage/Team")
     @PreAuthorize("hasAuthority('ADMIN')")
