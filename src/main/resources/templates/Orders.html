@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+</head>
+<body class="container py-3">
+<header th:insert="block/header :: header" ></header>
+<div  class="container-sm" style="width: 90%" >
+
+    <h1 class="list-inline-item" >Orders</h1>
+
+    <div class="list-inline-item">
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/adminPage/OrdersDone" class="btn btn-primary">Done</a>
+            <a href="/adminPage/OrderDontDone" class="btn btn-primary">Dont done</a>
+            <a href="/adminPage/OrdersOnProcess"  class="btn btn-primary">In progress</a>
+        </div>
+        <a  class="btn btn-outline-success" href="/adminPage">Go back</a>
+
+    </div>
+
+    <center>
+        <h2>Table orders</h2>
+    </center>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Price</th>
+            <th scope="col">Username</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+
+
+        <tbody th:each="el : ${orders}">
+        <tr>
+            <th th:text="${el.getId}"></th>
+            <th th:text="${el.getPrice}"></th>
+            <th th:text="${el.getUser.getUsername}"></th>
+            <th th:text="${el.getUser.getFirstName}"></th>
+            <th th:text="${el.getUser.getLastName}"></th>
+            <th th:text="${el.getUser.getEmail}"></th>
+            <th th:text="${el.getUser.getPhone}"></th>
+            <th >
+                <a th:href="'/adminPage/Order' + ${el.getId}" class="btn btn-primary">About</a> </th>
+
+            <th th:if="${el.isDone} == true"><a th:href="'/adminPage/OrderDontDone'+ ${el.getId}" type="button" class="btn btn-success">Done</a></th>
+            <th th:if="${el.isDone} == false"><a th:href="'/adminPage/OrderDone'+ ${el.getId}" type="button" class="btn btn-danger">Not done</a></th>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+<footer th:insert="block/footer :: footer"></footer>
+</body>
+</html>

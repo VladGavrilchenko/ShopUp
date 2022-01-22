@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guitar-pedal</title>
+</head>
+<body class="container py-3">
+<header th:insert="block/header :: header" ></header>
+<div  class="container-sm" style="width: 90%" >
+
+
+    <div class="row g-5 py-3 row-cols-1 row-cols-lg-2">
+        <div class="feature col">
+            <strong> <img th:src="${guitarPedal.getFirstImage}" align="center" style="  width: 70%;"
+                          alt="No photo"><strong>
+        </div>
+
+        <div class="feature col" >
+            <h1 th:text="${guitarPedal.getNameOfProduct}"></h1><br>
+            <h5 th:text="'Type guitar: '+${guitarPedal.getForGuitar}"></h5>
+            <h5 th:text="'Manufacturer: '+${guitarPedal.getManufacturer}"></h5>
+            <h5 th:text="'Effect: '+${guitarPedal.getEffect}"></h5>
+            <h5  th:text="'Device type: '+${guitarPedal.getDeviceType}" ></h5>
+            <h5  th:text="'Format: '+${guitarPedal.getFormat}" ></h5>
+
+            <h5>Descriptions</h5>
+            <p th:text="${guitarPedal.getDescriptions}"></p><br>
+            <h4 th:text="'Price: '+${guitarPedal.getPrice}"></h4><br>
+
+            <div th:if="${guitarPedal.getQuantity} >0" >
+                <a th:href="'/addToOrderGuitarPedal'+${guitarPedal.getId}" class="btn btn-success">Buy</a>
+            </div>
+
+
+            <div th:if="${guitarPedal.getQuantity} == 0" >
+                <a  class="btn btn-danger">Out of stock</a>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+
+<footer th:insert="block/footer :: footer"></footer>
+</body>
+</html>

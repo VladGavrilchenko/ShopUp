@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basket</title>
+</head>
+<body class="container py-3">
+<header th:insert="block/header :: header" ></header>
+<div  class="container-sm" style="width: 90%" >
+
+
+
+         <h2 th:text="${messages}"></h2>
+
+
+
+    <center>
+        <h2>Basket</h2>
+    </center>
+
+
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Price</th>
+                <th scope="col">Name</th>
+                <th scope="col">Count</th>
+
+            </tr>
+            </thead>
+
+
+            <tbody th:each="instance : ${guitars}">
+            <tr>
+                <th th:text="${instance.getKey.getId}"></th>
+                <th th:text="${instance.getKey.getPrice}"></th>
+                <th th:text="${instance.getKey.getNameOfProduct}"></th>
+                <th th:text="${instance.getValue}"></th>
+                <th>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a th:href="'/aboutGuitar'+${instance.getKey.getId}"class="btn btn-primary" >About</a>
+                            <a th:href="'/addGuitar'+${instance.getKey.getId}"class="btn btn-success">Add</a>
+                            <a th:href="'/deleteGuitar'+${instance.getKey.getId}"class="btn btn-danger">Delete</a>
+                        </div>
+                    </center>
+                </th>
+            </tr>
+            </tbody>
+
+            <tbody th:each="instance : ${guitarString}">
+            <tr>
+                <th th:text="${instance.getKey.getId}"></th>
+                <th th:text="${instance.getKey.getPrice}"></th>
+                <th th:text="${instance.getKey.getNameOfProduct}"></th>
+                <th th:text="${instance.getValue}"></th>
+                <th>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a th:href="'/aboutGuitarStrings'+${instance.getKey.getId}"class="btn btn-primary" >About</a>
+                            <a th:href="'/addGuitarStrings'+${instance.getKey.getId}"class="btn btn-success">Add</a>
+                            <a th:href="'/deleteGuitarStrings'+${instance.getKey.getId}"class="btn btn-danger">Delete</a>
+                        </div>
+                    </center>
+                </th>
+
+            </tr>
+            </tbody>
+
+            <tbody th:each="instance : ${mediators}">
+            <tr>
+                <th th:text="${instance.getKey.getId}"></th>
+                <th th:text="${instance.getKey.getPrice}"></th>
+                <th th:text="${instance.getKey.getNameOfProduct}"></th>
+                <th th:text="${instance.getValue}"></th>
+                <th>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a th:href="'/aboutMediator'+${instance.getKey.getId}"class="btn btn-primary" >About</a>
+                            <a th:href="'/addMediator'+${instance.getKey.getId}"class="btn btn-success">Add</a>
+                            <a th:href="'/deleteMediator'+${instance.getKey.getId}"class="btn btn-danger">Delete</a>
+                        </div>
+                    </center>
+                </th>
+
+            </tr>
+            </tbody>
+
+            <tbody th:each="instance : ${instrumentCable}">
+            <tr>
+                <th th:text="${instance.getKey.getId}"></th>
+                <th th:text="${instance.getKey.getPrice}"></th>
+                <th th:text="${instance.getKey.getNameOfProduct}"></th>
+                <th th:text="${instance.getValue}"></th>
+                <th>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a th:href="'/aboutInstrumentCable'+${instance.getKey.getId}"class="btn btn-primary" >About</a>
+                            <a th:href="'/addInstrumentCable'+${instance.getKey.getId}"class="btn btn-success">Add</a>
+                            <a th:href="'/deleteInstrumentCable'+${instance.getKey.getId}"class="btn btn-danger">Delete</a>
+                        </div>
+                    </center>
+                </th>
+
+            </tr>
+            </tbody>
+
+
+            <tbody th:each="instance : ${guitarStrap}">
+            <tr>
+                <th th:text="${instance.getKey.getId}"></th>
+                <th th:text="${instance.getKey.getPrice}"></th>
+                <th th:text="${instance.getKey.getNameOfProduct}"></th>
+                <th th:text="${instance.getValue}"></th>
+                <th>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a th:href="'/aboutGuitarStrap'+${instance.getKey.getId}"class="btn btn-primary" >About</a>
+                            <a th:href="'/addGuitarStrap'+${instance.getKey.getId}"class="btn btn-success">Add</a>
+                            <a th:href="'/deleteGuitarStrap'+${instance.getKey.getId}"class="btn btn-danger">Delete</a>
+                        </div>
+                    </center>
+                </th>
+
+            </tr>
+            </tbody>
+
+
+            <tbody th:each="instance : ${comboAmplifier}">
+            <tr>
+                <th th:text="${instance.getKey.getId}"></th>
+                <th th:text="${instance.getKey.getPrice}"></th>
+                <th th:text="${instance.getKey.getNameOfProduct}"></th>
+                <th th:text="${instance.getValue}"></th>
+                <th>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a th:href="'/aboutСomboAmplifier'+${instance.getKey.getId}"class="btn btn-primary" >About</a>
+                            <a th:href="'/addСomboAmplifier'+${instance.getKey.getId}"class="btn btn-success">Add</a>
+                            <a th:href="'/deleteСomboAmplifier'+${instance.getKey.getId}"class="btn btn-danger">Delete</a>
+                        </div>
+                    </center>
+                </th>
+
+            </tr>
+            </tbody>
+
+
+            <tbody th:each="instance : ${guitarCase}">
+            <tr>
+                <th th:text="${instance.getKey.getId}"></th>
+                <th th:text="${instance.getKey.getPrice}"></th>
+                <th th:text="${instance.getKey.getNameOfProduct}"></th>
+                <th th:text="${instance.getValue}"></th>
+                <th>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a th:href="'/aboutGuitarCase'+${instance.getKey.getId}"class="btn btn-primary" >About</a>
+                            <a th:href="'/addGuitarCase'+${instance.getKey.getId}"class="btn btn-success">Add</a>
+                            <a th:href="'/deleteGuitarCase'+${instance.getKey.getId}"class="btn btn-danger">Delete</a>
+                        </div>
+                    </center>
+                </th>
+
+            </tr>
+            </tbody>
+
+
+            <tbody th:each="instance : ${guitarPedals}">
+            <tr>
+                <th th:text="${instance.getKey.getId}"></th>
+                <th th:text="${instance.getKey.getPrice}"></th>
+                <th th:text="${instance.getKey.getNameOfProduct}"></th>
+                <th th:text="${instance.getValue}"></th>
+                <th>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a th:href="'/aboutGuitarPedal'+${instance.getKey.getId}"class="btn btn-primary" >About</a>
+                            <a th:href="'/addGuitarPedal'+${instance.getKey.getId}"class="btn btn-success">Add</a>
+                            <a th:href="'/deleteGuitarPedal'+${instance.getKey.getId}"class="btn btn-danger">Delete</a>
+                        </div>
+                    </center>
+                </th>
+
+            </tr>
+            </tbody>
+
+        </table>
+
+    <h2 align="right" th:text="'Price: ' + ${order.getPrice()}"></h2>
+    <div th:if="${order.getPrice()}>0 ">
+        <div th:if="${messages.length()} ==0" >
+       <center>
+           <a href="/doneOrder" class="btn btn-success">Buy</a>
+       </center>
+        </div>
+    </div>
+</div>
+<footer th:insert="block/footer :: footer"></footer>
+</body>
+</html>
